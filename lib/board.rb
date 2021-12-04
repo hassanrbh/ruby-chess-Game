@@ -3,6 +3,7 @@ require './lib/rook.rb'
 require './lib/king.rb'
 require './lib/bishop.rb'
 require './lib/queen.rb'
+require './lib/Knight.rb'
 
 class Board
   attr_reader :grid
@@ -14,10 +15,18 @@ class Board
       board[[1,ro]] = Pawn.new(:black)
       board[[6,ro]] = Pawn.new(:white)
     end
-    board[[0,0]] = Rook.new(:black)
-    board[[0,7]] = Rook.new(:black)
-    board[[7,0]] = Rook.new(:white)
-    board[[7,7]] = Rook.new(:white)
+    [[0,:black],[7,:white]].each do |r,color|
+      board[[r,0]] = Rook.new(color)
+      board[[r,7]] = Rook.new(color)
+      board[[r,1]] = Knight.new(color)
+      board[[r,6]] = Knight.new(color)
+      board[[r,2]] = Bishop.new(color)
+      board[[r,5]] = Bishop.new(color)
+    end
+    board[[0,3]] = King.new(:black)
+    board[[0,4]] = Queen.new(:black)
+    board[[7,3]] = King.new(:white)
+    board[[7,4]] = Queen.new(:white)
 
     board
   end

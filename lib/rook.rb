@@ -4,9 +4,8 @@ class Rook
     @color = color
   end
 
-  def color
+  def to_s
     color == :black ? "♘" : "♞"
-
   end
   def move_dirs
     [
@@ -20,6 +19,4 @@ class Rook
       [-2,-1]
     ]
   end
-
-
 end
