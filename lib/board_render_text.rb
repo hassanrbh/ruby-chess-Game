@@ -7,13 +7,12 @@ class BoardRenderText
   
   def render
     8.times do |row|
-      puts "----------"
+      puts "--------"
       8.times do |columns|
-        print board[[row,columns]]
+        print "#{board[[row,columns]]}"
       end
+      puts ""
     end
 
   end
-
-
 end

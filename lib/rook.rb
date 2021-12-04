@@ -1,7 +1,6 @@
 class Rook
   attr_reader :color
-  def initialize(location,color)
-    @location = location
+  def initialize(color)
     @color = color
   end
 

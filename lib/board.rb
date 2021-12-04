@@ -1,6 +1,26 @@
+require './lib/pawn.rb'
+require './lib/rook.rb'
+require './lib/king.rb'
+require './lib/bishop.rb'
+require './lib/queen.rb'
+
 class Board
   attr_reader :grid
 
+  def self.start_chess
+    board = self.new
+
+    8.times do |ro|
+      board[[1,ro]] = Pawn.new(:black)
+      board[[6,ro]] = Pawn.new(:white)
+    end
+    board[[0,0]] = Rook.new(:black)
+    board[[0,7]] = Rook.new(:black)
+    board[[7,0]] = Rook.new(:white)
+    board[[7,7]] = Rook.new(:white)
+
+    board
+  end
   def initialize
     @grid = Array.new(8) {Array.new(8)}
   end
