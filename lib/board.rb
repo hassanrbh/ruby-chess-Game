@@ -1,9 +1,4 @@
-require './lib/pawn.rb'
-require './lib/rook.rb'
-require './lib/king.rb'
-require './lib/bishop.rb'
-require './lib/queen.rb'
-require './lib/Knight.rb'
+# require './lib/pieces.rb'
 
 class Board
   attr_reader :grid
