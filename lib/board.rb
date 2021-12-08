@@ -1,4 +1,9 @@
-# require './lib/pieces.rb'
+require './lib/pawn.rb'
+require './lib/rook.rb'
+require './lib/king.rb'
+require './lib/bishop.rb'
+require './lib/queen.rb'
+require './lib/Knight.rb'
 
 class Board
   attr_reader :grid
@@ -39,10 +44,14 @@ class Board
     grid[row][columns]
   end
 
-  def in_bounds?(locations) # check for the location in_bounds
+  def in_bounds?(locations) # do not go out of the range if go out break 
     row,columns = locations
 
     row < grid.length && columns < grid.first.length && row >= 0 && columns >= 0
+  end
+  def empty?(locations)
+    row,columns = locations
+    grid[row][columns].nil?
   end
 end
 

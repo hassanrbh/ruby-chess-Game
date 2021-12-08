@@ -1,3 +1,5 @@
+require './lib/slideable.rb'
+require './lib/stepable.rb'
 require './lib/piece.rb'
 require './lib/pawn.rb'
 require './lib/rook.rb'

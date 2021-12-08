@@ -7,7 +7,7 @@ class BoardRenderText
   
   def render
     8.times do |row|
-      puts "--------"
+      puts "----------------"
       8.times do |columns|
         pieces = board[[row,columns]]
         if pieces.nil?

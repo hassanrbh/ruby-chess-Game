@@ -1,11 +1,8 @@
 class Bishop
-  attr_reader :color
-  def initialize(color)
-    @color = color
-  end
-
+  include Slideable
+  
   def to_s
-    color == :black ? "♝" : "♗"
+    color == :black ? "♝ " : "♗ "
   end
 
   def move_dirs
