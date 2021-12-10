@@ -1,3 +1,4 @@
+require './lib/stepable.rb'
 class King < Piece
   include Stepable
   def to_s

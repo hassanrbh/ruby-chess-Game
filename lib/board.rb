@@ -12,21 +12,21 @@ class Board
     board = self.new
 
     8.times do |ro|
-      board[[1,ro]] = Pawn.new(:black)
-      board[[6,ro]] = Pawn.new(:white)
+      board[[1,ro]] = Pawn.new(self,[1,ro],:black)
+      board[[6,ro]] = Pawn.new(self,[6,ro],:white)
     end
-    [[0,:black],[7,:white]].each do |r,color|
-      board[[r,0]] = Rook.new(color)
-      board[[r,7]] = Rook.new(color)
-      board[[r,1]] = Knight.new(color)
-      board[[r,6]] = Knight.new(color)
-      board[[r,2]] = Bishop.new(color)
-      board[[r,5]] = Bishop.new(color)
+    [[0,:black],[7,:white]].each do |(r,color)|
+      board[[r,0]] = Rook.new(self,[r,0] , color)
+      board[[r,7]] = Rook.new(self,[r,7] , color)
+      board[[r,1]] = Knight.new(self,[r,1] , color)
+      board[[r,6]] = Knight.new(self,[r,6] , color)
+      board[[r,2]] = Bishop.new(self,[r,2] , color)
+      board[[r,5]] = Bishop.new(self,[r,5] , color)
     end
-    board[[0,3]] = King.new(:black)
-    board[[0,4]] = Queen.new(:black)
-    board[[7,3]] = King.new(:white)
-    board[[7,4]] = Queen.new(:white)
+    board[[0,3]] = King.new(self, [0,3] ,:black)
+    board[[0,4]] = Queen.new(self, [0,4] , :black)
+    board[[7,3]] = King.new(self, [7,3] , :white)
+    board[[7,4]] = Queen.new(self, [7,4] , :white)
 
     board
   end

@@ -1,3 +1,4 @@
+require './lib/slideable.rb'
 class Rook < Piece
   include Slideable
   
